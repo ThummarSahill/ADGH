@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<odoo>
+
+	<record id="inherited_res_users_form" model="ir.ui.view">
+		<field name="name">inherited.res.users.form</field>
+		<field name="model">res.users</field>
+		<field name="inherit_id" ref="base.view_users_form"/>
+		<field name="arch" type="xml">
+			<field name="tz" position="after">
+				<field name="restrict_analytic" invisible="1"/>
+				<field name="analytic_account_ids" required="restrict_analytic is True"/>
+			</field>
+
+			<group name="messaging" position="before">
+				<group string="Warehouse Restrictions">
+					<field name="restrict_warehouse" invisible="1"/>
+					<field name="warehouse_ids" widget="many2many_tags" required="restrict_warehouse is True"/>
+					<field name="default_picking_type_ids" widget="many2many_tags" required="restrict_warehouse is True"/>
+				</group>
+			</group>
+		</field>
+	</record>
+
+</odoo>

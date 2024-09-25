@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_branch_form" model="ir.ui.view">
+            <field name="name">branch.form</field>
+            <field name="model">branch</field>
+            <field name="arch" type="xml">
+                <form string="Branch">
+                    <sheet>
+                        <group cols="4">
+                            <group>
+                                <field name="branch_code" required="1"/>
+                                <field name="company_id"/>
+                            </group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_branch_tree" model="ir.ui.view">
+            <field name="name">branch.tree</field>
+            <field name="model">branch</field>
+            <field name="arch" type="xml">
+                <tree string="Branch">
+                    <field name="branch_code"/>
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_branch" model="ir.actions.act_window">
+            <field name="name">Branch</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">branch</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new branch
+                </p>
+            </field>
+        </record>
+
+        <!-- <menuitem action="action_branch" id="menu_branch" parent="base.menu_users"/> -->
+
+
+       
+    </data>
+</odoo>

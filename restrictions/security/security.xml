@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<!-- warehouse nulti company -->
+	<function name="write" model="ir.model.data">
+		<function name="search" model="ir.model.data">
+			<value eval="[('module', '=', 'stock'), ('name', '=', 'stock_warehouse_comp_rule')]"/>
+		</function>
+		<value eval="{'noupdate': False}"/>
+	</function>
+	<record model="ir.rule" id="stock.stock_warehouse_comp_rule">
+		<field name="name">Warehouse multi-company</field>
+		<field name="model_id" ref="stock.model_stock_warehouse"/>
+		<field name="active">False</field>
+	</record>
+	<function name="write" model="ir.model.data">
+		<function name="search" model="ir.model.data">
+			<value eval="[('module', '=', 'stock'), ('name', '=', 'stock_picking_rule')]"/>
+		</function>
+		<value eval="{'noupdate': False}"/>
+	</function>
+	<record model="ir.rule" id="stock.stock_picking_rule">
+		<field name="name">stock_picking multi-company</field>
+		<field name="model_id" search="[('model','=','stock.picking')]" model="ir.model"/>
+		<field name="active">False</field>
+	</record>
+	<function name="write" model="ir.model.data">
+		<function name="search" model="ir.model.data">
+			<value eval="[('module', '=', 'stock'), ('name', '=', 'stock_picking_type_rule')]"/>
+		</function>
+		<value eval="{'noupdate': False}"/>
+	</function>
+	<record model="ir.rule" id="stock.stock_picking_type_rule">
+		<field name="name">Stock Operation Type multi-company</field>
+		<field name="model_id" search="[('model','=','stock.picking.type')]" model="ir.model"/>
+		<field name="active">False</field>
+	</record>
+
+	<!-- warehouse restriction in SO -->
+	<function name="write" model="ir.model.data">
+		<function name="search" model="ir.model.data">
+			<value eval="[('module', '=', 'sale'), ('name', '=', 'sale_order_personal_rule')]"/>
+		</function>
+		<value eval="{'noupdate': False}"/>
+	</function>
+
+	<record id="sale.sale_order_personal_rule" model="ir.rule">
+		<field name="name">Personal Orders in specofoc warehouse</field>
+		<field ref="sale.model_sale_order" name="model_id"/>
+		<field name="domain_force">[('warehouse_id', 'in', user.warehouse_ids.ids)]</field>
+		<field name="groups" eval="[(4, ref('sales_team.group_sale_salesman')),(4, ref('sales_team.group_sale_salesman_all_leads'))]"/>
+		<field eval="0" name="perm_unlink"/>
+		<field eval="1" name="perm_write"/>
+		<field eval="1" name="perm_read"/>
+		<field eval="1" name="perm_create"/>
+	</record>
+
+	<!-- in inventory module -->
+
+	<record id="group_restrict_warehouse1" model="res.groups">
+		<field name="name">Resrict Stock warehouses</field>
+	</record>
+	<!-- User See Only hes owen Warehouse Operations-->
+	<record id="filter_user_stock_picking_type_allowed_new1" model="ir.rule">
+		<field name="name">Filter Stock Picking Type Allowed new</field>
+		<field name="model_id" search="[('model','=','stock.picking.type')]" model="ir.model"/>
+		<field name="groups" eval="[(4, ref('group_restrict_warehouse1'))]"/>
+		<field name="domain_force">[('id', 'in', user.default_picking_type_ids.ids), ('company_id', 'in', company_ids)]</field>
+		<field name="perm_read" eval="True"/>
+		<field name="perm_write" eval="True"/>
+		<field name="perm_create" eval="True"/>
+		<field name="perm_unlink" eval="False"/>
+	</record>
+	<!-- User see hes Owen Inventory Transfer -->
+	<record id="filter_user_stock_picking_allowed1" model="ir.rule">
+		<field name="name">Filter Stock Picking Allowed</field>
+		<field name="model_id" search="[('model','=','stock.picking')]" model="ir.model"/>
+		<field name="groups" eval="[(4, ref('group_restrict_warehouse1'))]"/>
+		<field name="domain_force">[('picking_type_id', 'in', user.default_picking_type_ids.ids), ('company_id', 'in', company_ids)]
+		</field>
+		<field name="perm_read" eval="True"/>
+		<field name="perm_write" eval="True"/>
+		<field name="perm_create" eval="True"/>
+		<field name="perm_unlink" eval="False"/>
+	</record>
+	<!-- User See Only hes owen Warehouse -->
+
+	<record id="filter_user_stock_warehouse_allowed_new1" model="ir.rule">
+		<field name="name">Filter Warehouses</field>
+		<field name="model_id" search="[('model','=','stock.warehouse')]" model="ir.model"/>
+		<field name="groups" eval="[(4, ref('group_restrict_warehouse1'))]"/>
+		<field name="domain_force">[('id', 'in', user.warehouse_ids.ids)]</field>
+		<field name="perm_read" eval="True"/>
+		<field name="perm_write" eval="True"/>
+		<field name="perm_create" eval="True"/>
+		<field name="perm_unlink" eval="False"/>
+	</record>
+
+
+	<!-- Analytic Account -->
+	<!--    <record id="group_restrict_analytic_acc" model="res.groups">-->
+	<!--        <field name="name">Resrict Analytic Accounts</field>-->
+	<!--    </record>-->
+
+	<!--    <record id="filter_user_account_analytic" model="ir.rule">-->
+	<!--        <field name="name">Filter Analytic Accounts Allowed</field>-->
+	<!--        <field name="model_id" search="[('model','=','account.analytic.account')]" model="ir.model"/>-->
+	<!--        <field name="groups" eval="[(4, ref('group_restrict_analytic_acc'))]"/>-->
+	<!--        <field name="domain_force">[('id','=', user.analytic_account_ids.id),('company_id', 'in', company_ids)]-->
+	<!--        </field>-->
+	<!--        <field name="perm_read" eval="True"/>-->
+	<!--        <field name="perm_write" eval="True"/>-->
+	<!--        <field name="perm_create" eval="True"/>-->
+	<!--        <field name="perm_unlink" eval="False"/>-->
+	<!--    </record>-->
+	<!-- Journals -->
+	<!--         <record id="group_restrict_account_journal" model="res.groups">-->
+	<!--             <field name="name">Resrict Journals</field>-->
+	<!--         </record>-->
+	<!--     <record id="filter_user_account_journal" model="ir.rule">-->
+	<!--             <field name="name">Filter Journals Allowed</field>-->
+	<!--             <field name="model_id" search="[('model','=','account.journal')]" model="ir.model"/>-->
+	<!--             <field name="groups" eval="[(4, ref('group_restrict_account_journal'))]"/>-->
+	<!--             <field name="domain_force">[('id','in', user.journal_id.ids),('company_id', 'in', company_ids)]-->
+	<!--             </field>-->
+	<!--             <field name="perm_read" eval="True"/>-->
+	<!--             <field name="perm_write" eval="True"/>-->
+	<!--             <field name="perm_create" eval="True"/>-->
+	<!--             <field name="perm_unlink" eval="False"/>-->
+	<!--     </record>-->
+</odoo>

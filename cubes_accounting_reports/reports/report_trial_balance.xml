@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="report_trialbalance">
+		<t t-call="web.html_container">
+			<t t-call="web.external_layout">
+				<t t-foreach="docs" t-as="o">
+					<div class="page">
+						<h4 class="text-center" style="font-weight: bold;">ميـــزان المراجعه للحســابات</h4>
+						<div class="text-right" style="margin-top: 10px;justify-content: center;">
+							<br/>
+							<table class="table table-bordered" dir="ltr">
+								<thead>
+									<tr style="background-color: #BDC2C8;color: black;">
+										<th class="text-center"
+										    style="text-align:right;font-size:11px;color: black;">الـــي الفتــره
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:11px;background-color: #BDC2C8;color:black;">
+											مـــن الفتــره
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<td class="text-center"
+									    style="text-align:right;font-size:9px;color: black;">
+										<span t-out="data['date_to']"/>
+									</td>
+									<td class="text-center"
+									    style="text-align:right;font-size:9px;color: black;">
+										<span t-out="data['date_from']"/>
+									</td>
+								</tbody>
+							</table>
+							<br/>
+							<br/>
+							<table class="table table-bordered" dir="ltr">
+								<thead>
+									<tr style="color: black;">
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color:black;">
+											الفرق بين الرصــيدين
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color:black;">
+											الرصــيد الختامي
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color:black;">
+											إغـلاق الحانب الدائن
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">إغـلاق الحانب المدين
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">حركه العمليات الحانب
+											الدائن
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">حركه العمليات الحانب
+											المدين
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">الرصــيد الافتتاحــي
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">رصـيد الجانب الدائن أول
+											الفتره
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">رصـيد الجانب المدين أول
+											الفتره
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">أسم الحســاب
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">رقم الحســاب
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-set="col_1" t-value="0"/>
+									<t t-set="col_2" t-value="0"/>
+									<t t-set="col_3" t-value="0"/>
+									<t t-set="col_4" t-value="0"/>
+									<t t-set="col_5" t-value="0"/>
+									<t t-set="col_6" t-value="0"/>
+									<t t-set="col_7" t-value="0"/>
+									<t t-set="col_8" t-value="0"/>
+									<t t-set="col_9" t-value="0"/>
+									<tr t-foreach="Accounts" t-as="account">
+										<t t-set="col_1" t-value="col_1 + (account['debit'] and account['debit'] or 0)"/>
+										<t t-set="col_2" t-value="col_2 + (account['credit'] and account['credit'] or 0)"/>
+										<t t-set="col_3" t-value="col_3 + (account['balance'] and account['balance'] or 0)"/>
+										<t t-set="col_4" t-value="col_4 + (account['debit'] and account['debit'] or 0)"/>
+										<t t-set="col_5" t-value="col_5 + (account['credit'] and account['credit'] or 0)"/>
+										<t t-set="col_6" t-value="col_6 + (first and first or 0)"/>
+										<t t-set="col_7" t-value="col_7 + (second and second or 0)"/>
+										<t t-set="col_8" t-value="col_8 + (second and second or 0)"/>
+										<t t-set="col_9" t-value="col_9 + (different and different or 0)"/>
+										<t t-set="first" t-value="account['debit'] - account['credit']"/>
+										<t t-set="second" t-value="account['credit'] - account['debit']"/>
+										<t t-set="different" t-value="account['balance'] + (account['credit'] - account['debit'])"/>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="different"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="second"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+										</td>
+
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="second"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="first"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="account['credit']"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="account['debit']"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="account['balance']"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="account['credit']"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="account['debit']"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="account['name']"/>
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="account['code']"/>
+
+										</td>
+									</tr>
+									<tr style="font-weight: Bold; color: black;">
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_9"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_8"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_7"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_6"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_5"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_4"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_3"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_2"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span t-out="col_1"
+											      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span> اﻹجمالي </span>
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:9px;color: black;">
+											<span> - </span>
+
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>

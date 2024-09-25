@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_alrafda_stock_groups">
+            <field name="name">ادارة المخزون (الرافدة)</field>
+            <field name="description">ادارة المخزون (الرافدة)</field>
+            <field name="sequence">45</field>
+        </record>
+
+        <record id="group_inventory_report" model="res.groups">
+            <field name="name">تقرير المخزون</field>
+            <field name="category_id" ref="module_alrafda_stock_groups"/>
+        </record>
+
+        <record id="group_inventory_update" model="res.groups">
+            <field name="name">تحديث المخزون</field>
+            <field name="category_id" ref="module_alrafda_stock_groups"/>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,596 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* smt_accounting_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-02 20:47+0000\n"
+"PO-Revision-Date: 2023-09-02 20:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ": Date"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            ......................................."
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            .......................................\n"
+"                                            <br/>\n"
+"                                            <br/>"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "<span> - </span>"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "<span> اﻹجمالي </span>"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Account Name"
+msgstr "اسم الحساب"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Account No."
+msgstr "رقم الحساب"
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_balance_report__display_account__all
+msgid "All"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__cash_amount_in_words
+msgid "Amount in Words"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Balances Difference"
+msgstr "الفرق بين الرصيدين"
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_payment__bank_or_cash__bank
+msgid "Bank"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_payment__bank_or_cash__cash
+msgid "Cash"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"Check\n"
+"                                Delivery Note"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_payment__bank_or_cash__cheque
+msgid "Cheque"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__is_cheque
+msgid "Cheque Flag"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__cheque_number
+msgid "Cheque Number"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__company_id
+msgid "Company"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Date To"
+msgstr "إلى تاريخ"
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid "Date:"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__display_account
+msgid "Display Accounts"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__date_to
+msgid "End Date"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Ending Balance"
+msgstr "الرصيد الختامي"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Ending Balance Credit Side"
+msgstr "إغلاق الجانب الدائن"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Ending Balance Debit Side"
+msgstr "إغلاق الجانب المدين"
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.account_report_balance_view
+msgid "Export XLSX"
+msgstr "تصدير XLSX"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance.py:0
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__halla_amount
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__riyal_amount
+msgid "Halla"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__id
+msgid "ID"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__is_in
+msgid "In Flag"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Initial Balance Credit side"
+msgstr "رصيد الجانب الدائن أول المدة"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Initial Balance Debit Side"
+msgstr "رصيد الجانب المدين أول المدة"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr "الرصيد اﻹفتتاحي"
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__journal_ids
+msgid "Journals"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Movement of Credit Side"
+msgstr "حركة العمليات الجانب الدائن"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Movement of Debit Side"
+msgstr "حركة العمليات الجانب المدين"
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__is_out
+msgid "Out Flag"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__partner_without_no
+msgid "Partner"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"Payment\n"
+"                                Voucher"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__bank_or_cash
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_payment__bank_or_cash_arabic
+msgid "Payment Method"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model,name:smt_accounting_reports.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"Receipt\n"
+"                                Voucher"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__is_final_balance
+msgid "Show Final Balance in report ?"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__date_from
+msgid "Start Date"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields,field_description:smt_accounting_reports.field_account_balance_report__target_move
+msgid "Target Moves"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Total"
+msgstr "اﻹجمالي"
+
+#. module: smt_accounting_reports
+#: model:ir.actions.act_window,name:smt_accounting_reports.action_account_balance_menu
+#: model:ir.actions.report,name:smt_accounting_reports.action_report_trial_balance
+#: model:ir.actions.report,name:smt_accounting_reports.action_report_trial_balance_xls
+msgid "Trial Balance"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#, python-format
+msgid "Trial Balance For Accounts"
+msgstr "ميزان المراجعة للحسابات"
+
+#. module: smt_accounting_reports
+#: code:addons/smt_accounting_reports/reports/report_trial_balance_xls.py:0
+#: model:ir.model,name:smt_accounting_reports.model_account_balance_report
+#: model:ir.ui.menu,name:smt_accounting_reports.menu_general_Balance_report
+#, python-format
+msgid "Trial Balance Report"
+msgstr "تقرير ميزان المراجعة"
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_balance_report__display_account__not_zero
+msgid "With balance is not equal to 0"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_balance_report__display_account__movement
+msgid "With movements"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.account_report_balance_view
+msgid "or"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model,name:smt_accounting_reports.model_report_smt_accounting_reports_report_trialbalance
+msgid "report.smt_accounting_reports.report_trialbalance"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model,name:smt_accounting_reports.model_report_smt_accounting_reports_xlsx_trialbalance
+msgid "report.smt_accounting_reports.xlsx_trialbalance"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "أسم الحســاب"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"أمـــين الصــندوق\n"
+"                                            <br/>\n"
+"                                            Accountant"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"إستـــلمنا من الســاده :\n"
+"                                    .....................................................................................\n"
+"                                    : Received From"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"إصــــرفوا الي الســاده :\n"
+"                                    .................................................................................................\n"
+"                                    : Pay To"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "إغـلاق الحانب الدائن"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "إغـلاق الحانب المدين"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid "التــاريخ:"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "الرصــيد الافتتاحــي"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "الرصــيد الختامي"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid "الــرقم :"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "الـــي الفتــره"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "الفرق بين الرصــيدين"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"المســـتلم\n"
+"                                            <br/>\n"
+"                                            Received By"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"المـــدير\n"
+"                                            <br/>\n"
+"                                            Manager"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_payment__bank_or_cash_arabic__bank
+msgid "بنــك"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid ""
+"حركه العمليات الحانب\n"
+"                                            الدائن"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid ""
+"حركه العمليات الحانب\n"
+"                                            المدين"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid ""
+"رصـيد الجانب الدائن أول\n"
+"                                            الفتره"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid ""
+"رصـيد الجانب المدين أول\n"
+"                                            الفتره"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "رقم الحســاب"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid "ريــال SR"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid "ســــند إستلام شيكــات"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid "ســــند الصـــرف"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid "ســــند القبـــض"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"شيـــك Cheque  بالرقــم : ......................... : No\n"
+"                                    ............................ بتــاريــخ :"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_payment__bank_or_cash_arabic__cheque
+msgid "شيــك"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.actions.report,name:smt_accounting_reports.report_receipt_and_send_voucher
+msgid "طبـــاعه الســند"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model:ir.model.fields.selection,name:smt_accounting_reports.selection__account_payment__bank_or_cash_arabic__cash
+msgid "كاش"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"مبــلغـــا وقــــدره :\n"
+"                                    .........................................................................................................\n"
+"                                    : Sum Of"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"مبــلغـــا وقــــدره :\n"
+"                                    .....................................................................................................................\n"
+"                                    : Sum Of"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"مبــلغـــا وقــــدره :\n"
+"                                    .......................................................................................................................\n"
+"                                    : Sum Of"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"مديـــر الحســابات\n"
+"                                            <br/>\n"
+"                                            Acc Manager"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "مـــن الفتــره"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_trialbalance
+msgid "ميـــزان المراجعه للحســابات"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"نقــدا Cash علــي رقــم : ......................... : No\n"
+"                                    ........................ بتــاريــخ :"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid "هـ.H"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"وذلــك :\n"
+"                                    ....................................................................................................................................\n"
+"                                    : For"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"وذلــك :\n"
+"                                    ......................................................................................................................................\n"
+"                                    : For"
+msgstr ""
+
+#. module: smt_accounting_reports
+#: model_terms:ir.ui.view,arch_db:smt_accounting_reports.report_receipt_and_send_voucher_details
+msgid ""
+"وذلــك :\n"
+"                                    .............................................................................................................................................\n"
+"                                    : For"
+msgstr ""

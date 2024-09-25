@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<!--        <record id="paper_format_receipt_and_send_voucher" model="report.paperformat">-->
+		<!--            <field name="name">Voucher Paper</field>-->
+		<!--            <field name="default" eval="True"/>-->
+		<!--            <field name="format">custom</field>-->
+		<!--            <field name="page_height">0</field>-->
+		<!--            <field name="page_width">0</field>-->
+		<!--            <field name="orientation">Portrait</field>-->
+		<!--            <field name="margin_top">70.00</field>-->
+		<!--            <field name="margin_bottom">15.0</field>-->
+		<!--            <field name="margin_left">7.0</field>-->
+		<!--            <field name="margin_right">7.0</field>-->
+		<!--            <field name="header_line" eval="False"/>-->
+		<!--            <field name="header_spacing">40</field>-->
+		<!--            <field name="dpi">90</field>-->
+		<!--        </record>-->
+
+		<record id="report_receipt_and_send_voucher" model="ir.actions.report">
+			<field name="name">طبـــاعه الســند</field>
+			<field name="model">account.payment</field>
+			<field name="report_type">qweb-pdf</field>
+			<field name="report_name">cubes_accounting_reports.report_receipt_and_send_voucher_details</field>
+			<field name="report_file">cubes_accounting_reports.report_receipt_and_send_voucher_details</field>
+			<field name="print_report_name">'Payment - %s' % (object.name)</field>
+			<field name="binding_model_id" ref="account.model_account_payment"/>
+			<field name="binding_type">report</field>
+		</record>
+
+		<!--        <report-->
+		<!--            id="action_report_trial_balance"-->
+		<!--            model="account.balance.report"-->
+		<!--            string="Trial Balance"-->
+		<!--            report_type="qweb-pdf"-->
+		<!--            name="cubes_accounting_reports.report_trialbalance"-->
+		<!--            file="cubes_accounting_reports.report_trialbalance"-->
+		<!--            />-->
+		<!--        <report-->
+		<!--            id="action_report_trial_balance_xls"-->
+		<!--            model="account.balance.report"-->
+		<!--            string="Trial Balance"-->
+		<!--            report_type="xlsx"-->
+		<!--            name="cubes_accounting_reports.xlsx_trialbalance"-->
+		<!--            file="cubes_accounting_reports.xlsx_trialbalance"-->
+		<!--            />-->
+	</data>
+</odoo>

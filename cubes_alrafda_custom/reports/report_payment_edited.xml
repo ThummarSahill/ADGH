@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="report_payment_receipt_document_inherit" inherit_id="account.report_payment_receipt_document">
+		<xpath expr="//table" position="replace">
+			<table class="table table-sm d-none">
+				<thead>
+					<tr>
+						<th>
+							<span>تاريخ الفاتورة</span>
+						</th>
+						<th>
+							<span>رقم الفاتورة</span>
+						</th>
+						<th>
+							<span>مرجع</span>
+						</th>
+						<th class="text-right">
+							<span>القيمة</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<span t-field="o.date"/>
+						</td>
+						<td>
+							<span t-field="o.name"/>
+						</td>
+						<td>
+							<span t-field="o.ref"/>
+						</td>
+						<td class="text-right">
+							<span t-field="o.amount"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</xpath>
+	</template>
+
+</odoo>

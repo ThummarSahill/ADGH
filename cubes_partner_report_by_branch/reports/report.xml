@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="exel_report_by_category" model="ir.actions.report">
+			<field name="name">Partner Report By Branches</field>
+			<field name="model">partner.account.report</field>
+			<field name="report_type">xlsx</field>
+			<field name="report_name">cubes_partner_report_by_branch.report_branch_xlsx</field>
+			<field name="report_file">cubes_partner_report_by_branch.report_branch_xlsx</field>
+			<field name="binding_model_id" ref="model_partner_account_report"/>
+			<field name="binding_type">report</field>
+		</record>
+
+	</data>
+</odoo>

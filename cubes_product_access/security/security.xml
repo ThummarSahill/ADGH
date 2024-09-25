@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+	<data>
+		<record id="product_management_group_create_so" model="res.groups">
+			<field name="name">Product Create (Sale Order)</field>
+			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+		</record>
+
+		<record id="product_management_group_create_po" model="res.groups">
+			<field name="name">Product Create (Purchase Order)</field>
+			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+		</record>
+
+		<record id="product_management_group_create_move" model="res.groups">
+			<field name="name">Product Create (Accounting)</field>
+			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+		</record>
+
+		<record id="product_management_group_create" model="res.groups">
+			<field name="name">Product Create</field>
+			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+		</record>
+
+		<record id="product_management_group_edit" model="res.groups">
+			<field name="name">Prevent Product Edit</field>
+			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+		</record>
+	</data>
+</odoo>

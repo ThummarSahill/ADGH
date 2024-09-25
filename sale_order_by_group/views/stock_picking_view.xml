@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<record id="view_picking_form_inherit_branch_x1" model="ir.ui.view">
+		<field name="name">stock.picking.form.branch.x1</field>
+		<field name="model">stock.picking</field>
+		<field name="inherit_id" ref="stock.view_picking_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="after">
+				<field name="branch_id" invisible="branch_id is False"/>
+			</xpath>
+		</field>
+	</record>
+
+
+	<record id="view_picking_internal_search_x1" model="ir.ui.view">
+		<field name="name">stock.picking.search.x1</field>
+		<field name="model">stock.picking</field>
+		<field name="inherit_id" ref="stock.view_picking_internal_search"/>
+		<field name="arch" type="xml">
+			<xpath expr="//filter[@name='picking_type']" position="after">
+				<filter string="الفرع" name="branch_id" context="{'group_by':'branch_id'}"/>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>

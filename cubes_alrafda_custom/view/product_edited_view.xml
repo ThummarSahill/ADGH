@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<record id="product_template_form_view_inherited_x1" model="ir.ui.view">
+		<field name="name">product.template.form.x1</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="product.product_template_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@name='standard_price_uom']" position="replace">
+
+				<div name="standard_price_uom" groups="base.group_user" class="o_row"
+				     invisible="product_variant_count > 1 and is_product_variant is False"
+				     readonly="readonly_group is True">
+
+					<field name="standard_price" widget='monetary' readonly="readonly_group is True"
+					       options="{'currency_field': 'cost_currency_id', 'field_digits': True}"/>
+
+					<span groups="uom.group_uom" class="oe_read_only">
+						per <field name="uom_name"/>
+					</span>
+				</div>
+
+				<field name="readonly_group" invisible="1"/>
+
+			</xpath>
+
+			<xpath expr="//field[@name='list_price']" position="attributes">
+				<attribute name="readonly">readonly_group is True</attribute>
+			</xpath>
+
+		</field>
+	</record>
+
+	<record id="product_normal_form_view_inherited_x1" model="ir.ui.view">
+		<field name="name">product.product.form.x1</field>
+		<field name="model">product.product</field>
+		<field name="inherit_id" ref="product.product_normal_form_view"/>
+		<field name="arch" type="xml">
+
+			<xpath expr="//field[@name='list_price']" position="before">
+				<field name="readonly_group" invisible="1"/>
+			</xpath>
+
+			<xpath expr="//field[@name='list_price']" position="attributes">
+				<attribute name="readonly">product_variant_count > 1 or readonly_group is True</attribute>
+			</xpath>
+
+			<xpath expr="//field[@name='lst_price']" position="attributes">
+				<attribute name="readonly">readonly_group is True</attribute>
+			</xpath>
+
+			<xpath expr="//field[@name='list_price']" position="before">
+				<field name="last_purchase_price"/>
+				<field name="last_purchase_currency"/>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>

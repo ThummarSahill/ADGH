@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="external_layout_inherit" inherit_id="web.external_layout_standard">
+		<xpath expr="//div[hasclass('text-center')]//ul[hasclass('list-inline')]" position="before">
+			<t t-if="doc_model in ('sale.order','stock.picking','account.move')">
+				<table width="100%">
+					<tbode>
+						<tr style="font-size:15px; text-align:center;">
+							<td width="33.33%">
+								<span t-esc="o.branch_id.phone"/>
+							</td>
+							<td width="33.33%">
+								<span t-esc="o.branch_id.name"/>
+							</td>
+							<td width="33.33%">
+								<span t-esc="o.branch_id.location"/>
+							</td>
+						</tr>
+					</tbode>
+				</table>
+			</t>
+		</xpath>
+	</template>
+
+
+	<template id="external_layout_bold_inherit" inherit_id="web.external_layout_bold">
+		<xpath expr="//div[3]/div" position="replace">
+			<div class="row">
+				<t t-if="doc_model in ('sale.order','stock.picking','account.move') and o.branch_id">
+					<table width="100%">
+						<tbode>
+							<tr style="font-size:15px; text-align:center;">
+								<td width="33.33%">
+									<span t-esc="o.branch_id.phone"/>
+								</td>
+								<td width="33.33%">
+									<span t-esc="o.branch_id.name"/>
+								</td>
+								<td width="33.33%">
+									<span t-esc="o.branch_id.location"/>
+								</td>
+							</tr>
+						</tbode>
+					</table>
+				</t>
+				<div class="col-1">
+					<ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-right text-center">
+						<li class="list-inline-item">
+							<strong>
+								<span class="page"/>
+							</strong>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</xpath>
+	</template>
+
+</odoo>

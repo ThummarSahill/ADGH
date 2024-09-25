@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+	<menuitem id="sale_order_branch_menu"
+	          name="فروع المبيعات"
+	          action="sale_order_branch_action"
+	          parent="sale.menu_sale_config"
+	          sequence="100"/>
+
+
+</odoo>

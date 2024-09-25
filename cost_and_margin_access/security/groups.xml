@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+	<data>
+		<record id="cost_price_group" model="res.groups">
+			<field name="name">Show Cost Price</field>
+			<field name="users" eval="[(4, ref('base.group_user'))]"/>
+		</record>
+		<record id="margin_group" model="res.groups">
+			<field name="name">Show Margin</field>
+			<field name="users" eval="[(4, ref('base.group_user'))]"/>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="view_inherit_payment_form_accounting_report" model="ir.ui.view">
+			<field name="name">form.account.payment.accounting.report</field>
+			<field name="model">account.payment</field>
+			<field name="inherit_id" ref="account.view_account_payment_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="bank_or_cash" readonly="state == 'posted'" required="1"/>
+					<field name="cheque_number" invisible="bank_or_cash == 'cheque'" readonly="state == 'posted'"/>
+					<field name="bank_or_cash_arabic" invisible="1"/>
+					<field name="is_out" invisible="1"/>
+					<field name="is_in" invisible="1"/>
+					<field name="is_cheque" invisible="1"/>
+					<field name="cash_amount_in_words" invisible="1"/>
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="attributes">
+					<attribute name="required">1</attribute>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

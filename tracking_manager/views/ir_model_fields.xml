@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="ir_model_fields_action">
+        <field name="name">Trackable Fields</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ir.model.fields</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[("trackable", "=", True), ("model_id", "=", context['active_id']), ("ttype", "!=", "binary")]</field>
+        <field name="context">{}</field>
+        <field name="target">current</field>
+    </record>
+</odoo>

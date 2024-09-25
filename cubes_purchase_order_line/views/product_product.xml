@@ -1,0 +1,15 @@
+<odoo>
+	<data>
+		<!-- Inherit Form View to Modify it -->
+		<record id="product_product_inherit_form_view_id" model="ir.ui.view">
+			<field name="name">product.product.form.view</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_normal_form_view"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='default_code']" position="before">
+					<field name="last_price"/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

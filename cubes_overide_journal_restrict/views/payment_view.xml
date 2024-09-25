@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+	<!--     Add Users in Account Journal form view  -->
+	<record id="view_account_payment_form_restrict_x1" model="ir.ui.view">
+		<field name="name">account.payment.form.x1</field>
+		<field name="model">account.payment</field>
+		<field name="inherit_id" ref="account.view_account_payment_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='destination_journal_id']" position="after">
+				<field name="select_dst_journal"
+				       invisible="is_internal_transfer is False"
+				       readonly="state not in ['draft']"
+				       required="is_internal_transfer is True and state in ['draft']"/>
+			</xpath>
+			<xpath expr="//field[@name='destination_journal_id']" position="attributes">
+				<attribute name="readonly">1</attribute>
+				<attribute name="force_save">1</attribute>
+				<attribute name="options">{'no_open': True}</attribute>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>

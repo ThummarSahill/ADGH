@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<template id="report_receipt_and_send_voucher_details">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="web.external_layout">
+						<div class="page" dir="rtl" t-if="o.is_out == True">
+							<h4 class="text-center" style="font-weight: bold;">ســــند الصـــرف</h4>
+							<h4 class="text-center" style="font-weight: bold;text-decoration: underline;">Payment
+								Voucher
+							</h4>
+							<div class="text-right" style="margin-top: 10px;justify-content: center;">
+								<br/>
+								<table class="text-left">
+									<thead>
+										<tr style="background-color: #BDC2C8;color: black;">
+											<th class="text-center" width="35%"
+											    style="text-align:right;font-size:10;background-color: #BDC2C8;color:black;padding-left:5px;">
+
+											</th>
+											<th class="text-center"
+											    style="text-align:right;font-size:10;color: black;"
+											    width="40%">
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<td class="text-center"
+										    style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<span t-field="o.halla_amount" style="color: red;font-weight:bold;"/>
+											<br/>
+											<br/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<span t-field="o.riyal_amount" style="color: red;font-weight:bold;"/>
+											<br/>
+											<br/>
+										</td>
+									</tbody>
+								</table>
+								<h4 class="text-left" style="margin-top:-50px;">
+									الــرقم :
+									<span style="color:red;" t-field="o.name"/>
+								</h4>
+								<br/>
+								<br/>
+								<div colspan="2">
+									<h5 class="text-right">التــاريخ:
+										<span style="color:black;" t-field="o.date"/>
+									</h5>
+									<h5 class="text-left" style="margin-top:-30px;margin-right:50px;">Date:
+										<span style="color:black;" t-field="o.date"/>
+									</h5>
+								</div>
+							</div>
+							<br/>
+							<div class="page" dir="rtl">
+								<h4 class="text-right">إصــــرفوا الي الســاده :
+									.................................................................................................
+									: Pay To
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-52px;margin-right:-55px;">
+									<span t-field="o.partner_without_no"/>
+								</h4>
+								<br/>
+								<br/>
+								<h4 class="text-right">مبــلغـــا وقــــدره :
+									.........................................................................................................
+									: Sum Of
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-52px;">
+									<span t-out="o.amount_word(o.amount)"/>
+								</h4>
+								<br/>
+								<br/>
+								<br/>
+								<h4 class="text-right">نقــدا Cash علــي رقــم : ......................... : No
+									........................ بتــاريــخ :
+									<span style="color:black;" t-field="o.date"/>
+									: Date
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-45px;margin-right:100px;">
+									<span t-field="o.bank_or_cash_arabic"/>
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-30px;margin-left:300px;">
+									<span t-field="o.bank_or_cash"/>
+								</h4>
+								<br/>
+								<br/>
+								<h4 class="text-right">وذلــك :
+									....................................................................................................................................
+									: For
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-55px;margin-right:-52px;">
+									<span t-field="o.ref"/>
+								</h4>
+								<br/>
+								<br>
+								</br>
+							</div>
+							<br>
+							</br>
+							<br/>
+							<br/>
+							<br/>
+							<table style="border-collapse: collapse;width: 100%;" class="text-left">
+								<thead>
+									<tr style="background-color: #BDC2C8;color: black;">
+										<th class="text-center"
+										    style="text-align:right;font-size:10;background-color: #BDC2C8;color: black;">
+											المســـتلم
+											<br/>
+											Received By
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:10;color: black;"
+										    width="40%">أمـــين الصــندوق
+											<br/>
+											Accountant
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:10;color: black;"
+										    width="40%">مديـــر الحســابات
+											<br/>
+											Acc Manager
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:10;color: black;"
+										    width="40%">المـــدير
+											<br/>
+											Manager
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+										</td>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="page" dir="rtl" t-if="o.is_in == True">
+							<h4 class="text-center" style="font-weight: bold;">ســــند القبـــض</h4>
+							<h4 class="text-center" style="font-weight: bold;text-decoration: underline;">Receipt
+								Voucher
+							</h4>
+							<div class="text-right" style="margin-top: 10px;justify-content: center;">
+								<br/>
+								<table class="text-left">
+									<thead>
+										<tr style="background-color: #BDC2C8;color: black;">
+											<th class="text-center" width="35%"
+											    style="text-align:right;font-size:10;background-color: #BDC2C8;color:black;padding-left:5px;">
+
+											</th>
+											<th class="text-center"
+											    style="text-align:right;font-size:10;color: black;"
+											    width="40%">
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<td class="text-center"
+										    style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<span t-field="o.halla_amount" style="color: red;font-weight:bold;"/>
+											<br/>
+											<br/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<span t-field="o.riyal_amount" style="color: red;font-weight:bold;"/>
+											<br/>
+											<br/>
+										</td>
+									</tbody>
+								</table>
+								<h4 class="text-left" style="margin-top:-50px;">
+									الــرقم :
+									<span style="color:red;" t-field="o.name"/>
+								</h4>
+								<br/>
+								<br/>
+								<div colspan="2">
+									<h5 class="text-right">التــاريخ:
+										<span style="color:black;" t-field="o.date"/>
+									</h5>
+									<h5 class="text-left" style="margin-top:-30px;margin-right:50px;">Date:
+										<span style="color:black;" t-field="o.date"/>
+									</h5>
+								</div>
+							</div>
+							<br/>
+							<div class="page" dir="rtl">
+								<h4 class="text-right">إستـــلمنا من الســاده :
+									.....................................................................................
+									: Received From
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-45px;margin-right:-50px;">
+									<span t-field="o.partner_without_no"/>
+								</h4>
+								<br/>
+								<br/>
+								<h4 class="text-right">مبــلغـــا وقــــدره :
+									.....................................................................................................................
+									: Sum Of
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-50px;">
+									<span t-out="o.amount_word(o.amount)"/>
+								</h4>
+								<br/>
+								<br/>
+								<br/>
+								<h4 class="text-right">نقــدا Cash علــي رقــم : ......................... : No
+									........................ بتــاريــخ :
+									<span style="color:black;" t-field="o.date"/>
+									: Date
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-45px;margin-right:100px;">
+									<span t-field="o.bank_or_cash_arabic"/>
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-30px;margin-left:300px;">
+									<span t-field="o.bank_or_cash"/>
+								</h4>
+								<br/>
+								<br/>
+								<h4 class="text-right">وذلــك :
+									......................................................................................................................................
+									: For
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-50px;margin-right:-60px;">
+									<span t-field="o.ref"/>
+								</h4>
+								<br/>
+								<br>
+								</br>
+							</div>
+							<br>
+							</br>
+							<br/>
+							<br/>
+							<br/>
+							<table style="border-collapse: collapse;width: 100%;" class="text-left">
+								<thead>
+									<tr style="background-color: #BDC2C8;color: black;">
+										<th class="text-center"
+										    style="text-align:right;font-size:10;background-color: #BDC2C8;color: black;">
+											المســـتلم
+											<br/>
+											Received By
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:10;color: black;"
+										    width="40%">أمـــين الصــندوق
+											<br/>
+											Accountant
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:10;color: black;"
+										    width="40%">مديـــر الحســابات
+											<br/>
+											Acc Manager
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:10;color: black;"
+										    width="40%">المـــدير
+											<br/>
+											Manager
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+										</td>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="page" dir="rtl" t-if="o.is_cheque == True">
+							<h4 class="text-center" style="font-weight: bold;">ســــند إستلام شيكــات</h4>
+							<h4 class="text-center" style="font-weight: bold;text-decoration: underline;">Check
+								Delivery Note
+							</h4>
+							<div class="text-right" style="margin-top: 10px;justify-content: center;">
+								<br/>
+								<table class="text-left">
+									<thead>
+										<tr style="background-color: #BDC2C8;color: black;">
+											<th class="text-center" width="35%"
+											    style="text-align:right;font-size:10;background-color: #BDC2C8;color:black;padding-left:5px;">
+
+											</th>
+											<th class="text-center"
+											    style="text-align:right;font-size:10;color: black;"
+											    width="40%">
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<td class="text-center"
+										    style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<span t-field="o.halla_amount" style="color: red;font-weight:bold;"/>
+											<br/>
+											<br/>
+
+										</td>
+										<td class="text-center"
+										    style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<span t-field="o.riyal_amount" style="color: red;font-weight:bold;"/>
+											<br/>
+											<br/>
+										</td>
+									</tbody>
+								</table>
+								<h4 class="text-left" style="margin-top:-50px;">
+									الــرقم :
+									<span style="color:red;" t-field="o.name"/>
+								</h4>
+								<br/>
+								<br/>
+								<div colspan="2">
+									<h5 class="text-right">التــاريخ:
+										<span style="color:black;" t-field="o.date"/>
+									</h5>
+									<h5 class="text-left" style="margin-top:-30px;margin-right:50px;">Date:
+										<span style="color:black;" t-field="o.date"/>
+									</h5>
+								</div>
+							</div>
+							<br/>
+							<div class="page" dir="rtl">
+								<h4 class="text-right">إستـــلمنا من الســاده :
+									.....................................................................................
+									: Received From
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-45px;margin-right:-50px;">
+									<span t-field="o.partner_without_no"/>
+								</h4>
+								<br/>
+								<br/>
+								<h4 class="text-right">مبــلغـــا وقــــدره :
+									.......................................................................................................................
+									: Sum Of
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-50px;">
+									<span t-out="o.amount_word(o.amount)"/>
+								</h4>
+								<br/>
+								<br/>
+								<br/>
+								<h4 class="text-right">شيـــك Cheque بالرقــم : ......................... : No
+									............................ بتــاريــخ :
+									<span style="color:black;" t-field="o.date"/>
+									: Date
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-50px;margin-right:100px;">
+									<span t-field="o.cheque_number"/>
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-30px;margin-left:300px;">
+									<span t-field="o.cheque_number"/>
+								</h4>
+								<br/>
+								<br/>
+								<h4 class="text-right">وذلــك :
+									.............................................................................................................................................
+									: For
+								</h4>
+								<h4 class="text-center"
+								    style="font-size:20px;color:black;margin-top:-45px;margin-right:-50px;">
+									<span t-field="o.ref"/>
+								</h4>
+								<br/>
+								<br>
+								</br>
+							</div>
+							<br>
+							</br>
+							<br/>
+							<br/>
+							<br/>
+							<table style="border-collapse: collapse;width: 100%;" class="text-left">
+								<thead>
+									<tr style="background-color: #BDC2C8;color: black;">
+										<th class="text-center"
+										    style="text-align:right;font-size:10;background-color: #BDC2C8;color: black;">
+											المســـتلم
+											<br/>
+											Received By
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:10;color: black;"
+										    width="40%">مديـــر الحســابات
+											<br/>
+											Acc Manager
+										</th>
+										<th class="text-center"
+										    style="text-align:right;font-size:10;color: black;"
+										    width="40%">المـــدير
+											<br/>
+											Manager
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+										<td class="text-center" style="text-align:right;font-size:10;color: black;">
+											<br/>
+											<br/>
+											.......................................
+											<br/>
+											<br/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+	</data>
+</odoo>

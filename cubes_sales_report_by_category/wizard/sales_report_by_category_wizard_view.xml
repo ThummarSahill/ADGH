@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+	<data>
+		<record id="sale_report_category_wizard" model="ir.ui.view">
+			<field name="name">Sales Order Report</field>
+			<field name="model">sale.category.report</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Sales Report By Product Category">
+					<group>
+						<group>
+							<field name="start_date"/>
+						</group>
+						<group>
+							<field name="end_date"/>
+						</group>
+					</group>
+					<group>
+						<field name="category_ids" widget="many2many_tags" options="{'no_create': True}"/>
+						<field name="select_products"/>
+						<field name="product_ids" widget="many2many_tags"
+						       options="{'no_create': True}"
+						       domain="[('categ_id','in',category_ids)]"
+						       invisible="select_products is not True"/>
+					</group>
+					<footer>
+						<button name="action_print" string="Print Report" type="object" class="oe_highlight"/>
+						<button string="Cancel" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_sale_report_category_wizard" model="ir.actions.act_window">
+			<field name="name">Sales Report By Category</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">sale.category.report</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="sale_report_category_wizard"/>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem action="action_sale_report_category_wizard"
+		          id="menu_sale_report_category_wizard"
+		          parent="sale.menu_sale_report"/>
+	</data>
+</odoo>

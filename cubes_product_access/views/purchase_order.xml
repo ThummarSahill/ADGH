@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<record id="purchase_view_order_form_extended" model="ir.ui.view">
+		<field name="name">purchase.order.form.extended</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="after">
+				<field name="has_create_product" invisible="1"/>
+			</xpath>
+			<xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="before">
+				<field name="copy_product_id"
+				       invisible="parent.has_create_product is not False"
+				       options="{'no_create': True, 'no_open': True}"/>
+			</xpath>
+
+			<xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="attributes">
+				<attribute name="invisible">parent.has_create_product is False</attribute>
+			</xpath>
+
+		</field>
+	</record>
+
+</odoo>

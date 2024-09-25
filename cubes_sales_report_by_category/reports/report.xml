@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="exel_report_by_category" model="ir.actions.report">
+			<field name="name">Sales Report By Category</field>
+			<field name="model">sale.category.report</field>
+			<field name="report_type">xlsx</field>
+			<field name="report_name">cubes_sales_report_by_category.sale_report_cate_xlsx</field>
+			<field name="report_file">cubes_sales_report_by_category.sale_report_cate_xlsx</field>
+			<field name="binding_model_id" ref="model_sale_category_report"/>
+			<field name="binding_type">report</field>
+		</record>
+
+	</data>
+</odoo>

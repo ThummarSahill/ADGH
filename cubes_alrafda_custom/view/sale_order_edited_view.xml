@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<record id="view_order_form_inherited_x1" model="ir.ui.view">
+		<field name="name">sale.order.form.x1</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+
+			<xpath expr="//field[@name='partner_id']" position="after">
+				<field name="partner_credit"/>
+				<field name="balance"/>
+			</xpath>
+
+			<xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="replace">
+				<field name="readonly_group_sale" invisible="1"/>
+				<field name="price_unit" attrs="{'readonly': ['|',('readonly_group_sale', '=', True),('qty_invoiced', '&gt;', 0)]}"/>
+
+			</xpath>
+
+			<xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="replace">
+				<field name="readonly_group_sale" invisible="1"/>
+				<field name="price_unit" attrs="{'readonly': [('readonly_group_sale', '=', True)]}"/>
+			</xpath>
+
+		</field>
+	</record>
+
+
+	<!-- <record id="view_order_form_next_gen_x2" model="ir.ui.view">
+	   <field name="name">sale.order.form.x1</field>
+	   <field name="model">sale.order</field>
+	   <field name="inherit_id" ref="sale_margin.sale_margin_sale_order_line_form"/>
+	   <field name="arch" type="xml">
+		   <xpath expr="//field[@name='order_line']//tree//field[@name='margin']" position="attributes">
+			   <attribute name="groups">cubes_alrafda_custom.sale_margin_group</attribute>
+		   </xpath>
+		   <xpath expr="//field[@name='order_line']//tree//field[@name='margin_percent']" position="attributes">
+			   <attribute name="groups">cubes_alrafda_custom.sale_margin_group</attribute>
+		   </xpath>
+			<xpath expr="//field[@name='order_line']//tree//field[@name='purchase_price']" position="attributes">
+			   <attribute name="groups">cubes_alrafda_custom.sale_margin_group</attribute>
+		   </xpath>
+	   </field>
+   </record> -->
+
+
+	<!-- <record model="ir.ui.view" id="sale_margin.sale_margin_sale_order">
+	  <field name="name">sale.order.margin.view.form</field>
+	  <field name="model">sale.order</field>
+	  <field name="inherit_id" ref="sale.view_order_form"/>
+	  <field name="arch" type="xml">
+		  <xpath expr="//field[@name='tax_totals_json']" position="after">
+			  <label for="margin" groups="cubes_alrafda_custom.sale_margin_group"/>
+			  <div class="text-nowrap" groups="cubes_alrafda_custom.sale_margin_group">
+				   <field name="margin" class="oe_inline"/>
+				  <field name="amount_untaxed" invisible="1"/>
+				  <span class="oe_inline" attrs="{'invisible': [('amount_untaxed', '=', 0)]}">
+					  (<field name="margin_percent" nolabel="1" class="oe_inline" widget="percentage"/>)
+				  </span>
+			  </div>
+		  </xpath>
+	  </field>
+  </record> -->
+
+</odoo>

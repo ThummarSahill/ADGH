@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<record id="view_move_form_inherit_branch_x1" model="ir.ui.view">
+		<field name="name">account.move.form.branch.x1</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_move_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="after">
+				<field name="branch_id" readonly="0" force_save="1" options="{'no_create': True,'no_create_edit': True, 'no_open': True}"/>
+				<field name="compute_branch" invisible="1"/>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="view_move_tree_inherit_branch_x1" model="ir.ui.view">
+		<field name="name">account.move.tree.branch.x1</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_move_tree"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="before">
+				<field name="compute_branch" invisible="1"/>
+			</xpath>
+		</field>
+	</record>
+
+
+</odoo>
+		<!--attrs="{'readonly':[('branch_id','!=',False)]}"-->

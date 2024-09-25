@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<record id="view_order_form_inherit_branch_x1" model="ir.ui.view">
+		<field name="name">sale.order.form.branch.x1</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="before">
+				<field name="branch_id" required="1" options="{'no_create': True,'no_create_edit': True, 'no_open': True}"/>
+			</xpath>
+		</field>
+	</record>
+
+
+	<record id="view_order_product_search_x1" model="ir.ui.view">
+		<field name="name">sale.report.search.x1</field>
+		<field name="model">sale.report</field>
+		<field name="inherit_id" ref="sale.view_order_product_search"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='industry_id']" position="after">
+				<field name="branch_id"/>
+			</xpath>
+			<xpath expr="//filter[@name='status']" position="after">
+				<filter string="الفرع" name="branch_id" context="{'group_by':'branch_id'}"/>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>
